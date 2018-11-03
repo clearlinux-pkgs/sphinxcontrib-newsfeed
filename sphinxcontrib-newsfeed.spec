@@ -4,20 +4,17 @@
 #
 Name     : sphinxcontrib-newsfeed
 Version  : 0.1.4
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Summary  : News Feed extension for Sphinx
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: sphinxcontrib-newsfeed-python3
-Requires: sphinxcontrib-newsfeed-license
-Requires: sphinxcontrib-newsfeed-python
+Requires: sphinxcontrib-newsfeed-license = %{version}-%{release}
+Requires: sphinxcontrib-newsfeed-python = %{version}-%{release}
+Requires: sphinxcontrib-newsfeed-python3 = %{version}-%{release}
 Requires: Sphinx
-BuildRequires : pbr
-BuildRequires : pip
-BuildRequires : python3-dev
-BuildRequires : setuptools
+BuildRequires : buildreq-distutils3
 BuildRequires : setuptools-python
 
 %description
@@ -41,7 +38,7 @@ license components for the sphinxcontrib-newsfeed package.
 %package python
 Summary: python components for the sphinxcontrib-newsfeed package.
 Group: Default
-Requires: sphinxcontrib-newsfeed-python3
+Requires: sphinxcontrib-newsfeed-python3 = %{version}-%{release}
 
 %description python
 python components for the sphinxcontrib-newsfeed package.
@@ -64,14 +61,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530374266
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1541278811
+python3 setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/sphinxcontrib-newsfeed
-cp LICENSE %{buildroot}/usr/share/doc/sphinxcontrib-newsfeed/LICENSE
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/sphinxcontrib-newsfeed
+cp LICENSE %{buildroot}/usr/share/package-licenses/sphinxcontrib-newsfeed/LICENSE
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -80,8 +77,8 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/sphinxcontrib-newsfeed/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/sphinxcontrib-newsfeed/LICENSE
 
 %files python
 %defattr(-,root,root,-)
