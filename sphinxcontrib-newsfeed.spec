@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-newsfeed
 Version  : 0.1.4
-Release  : 19
+Release  : 20
 URL      : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Summary  : News Feed extension for Sphinx
@@ -18,14 +18,9 @@ BuildRequires : buildreq-distutils3
 BuildRequires : setuptools-python
 
 %description
+****************************************************************
 ``sphinxcontrib-newsfeed`` -- News Feed extension for Sphinx
-        ****************************************************************
-        
-        Overview
-        ========
-        
-        ``sphinxcontrib-newsfeed`` is a extension for adding a simple *Blog*,
-        *News* or *Announcements*  section to a Sphinx_ website.
+****************************************************************
 
 %package license
 Summary: license components for the sphinxcontrib-newsfeed package.
@@ -61,7 +56,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541278811
+export SOURCE_DATE_EPOCH=1551037951
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
