@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-newsfeed
 Version  : 0.1.4
-Release  : 26
+Release  : 27
 URL      : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Summary  : News Feed extension for Sphinx
@@ -19,9 +19,14 @@ BuildRequires : buildreq-distutils3
 BuildRequires : setuptools-python
 
 %description
-****************************************************************
 ``sphinxcontrib-newsfeed`` -- News Feed extension for Sphinx
-****************************************************************
+        ****************************************************************
+        
+        Overview
+        ========
+        
+        ``sphinxcontrib-newsfeed`` is a extension for adding a simple *Blog*,
+        *News* or *Announcements*  section to a Sphinx_ website.
 
 %package license
 Summary: license components for the sphinxcontrib-newsfeed package.
@@ -44,7 +49,8 @@ python components for the sphinxcontrib-newsfeed package.
 Summary: python3 components for the sphinxcontrib-newsfeed package.
 Group: Default
 Requires: python3-core
-Provides: pypi(sphinxcontrib-newsfeed)
+Provides: pypi(sphinxcontrib_newsfeed)
+Requires: pypi(sphinx)
 
 %description python3
 python3 components for the sphinxcontrib-newsfeed package.
@@ -59,8 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582919388
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583697351
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
