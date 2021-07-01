@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-newsfeed
 Version  : 0.1.4
-Release  : 34
+Release  : 35
 URL      : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz
 Summary  : News Feed extension for Sphinx
